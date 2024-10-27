@@ -98,9 +98,10 @@ window.FlySwatter = class {
 			if (e.key.toLowerCase() == "i" && e.ctrlKey) {
 				this.showPerf = !this.showPerf
 				this.perfDisplay(this.showPerf)
-			}
-			if (e.key == "f12" && e.ctrlKey) {
+			} else if (e.key == "F12" && e.ctrlKey) {
 				this.setGlobalGame()
+			} else if (e.key == "F5" && !e.ctrlKey) {
+				if (!this.#game.state.bgCity) this.#game.state.saveToBrowserStorage(this.#game.state.cityFile, ()=>this.#game.loadFromStorage(this.#game.state.cityFile))
 			}
 		})
 		console.info("Do FlySwatter.globalGame() to access the 'game' variable in the console.")
@@ -127,11 +128,18 @@ window.FlySwatter = class {
 				}
 			},
 			{
-				label: "Quick Reload",
+				label: "Restart Game",
 				key: "F5",
 				modifiers: "ctrl",
 				click: () => {
 					chrome.runtime.reload()
+				}
+			},
+			{
+				label: "Quick Reload City",
+				key: "F5",
+				click: () => {
+					if (!this.#game.state.bgCity) this.#game.state.saveToBrowserStorage(this.#game.state.cityFile, ()=>this.#game.loadFromStorage(this.#game.state.cityFile))
 				}
 			},
 		]
@@ -154,7 +162,7 @@ window.FlySwatter = class {
 				}
 			},
 			{
-				label: "Dev Tools",
+				label: "Open Dev Tools",
 				key: "F12",
 				modifiers: "ctrl",
 				click: () => {

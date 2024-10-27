@@ -1,6 +1,6 @@
 {
 	"name": "Flyswatter",
 	"description": "Useful cheats and tools for making mod development easier.",
-	"version": 1,
+	"version": 1.1,
 	"loadPriority": 100
 }
