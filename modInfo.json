@@ -1,6 +1,6 @@
 {
 	"name": "Flyswatter",
-	"description": "Useful cheats and tools for making mod development easier.",
+	"description": "Useful cheats and tools for making mod development easier. To use the tools this mod has to offer, simply right click anywhere on the screen and select an option.",
 	"version": 1.1,
 	"loadPriority": 100
 }
