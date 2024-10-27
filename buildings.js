@@ -80,6 +80,7 @@ FlySwatter.registerDebugger("buildinginfo Editor", function(document) {
 		text(`<a href="#">Explanation of what each field means</a>`).onclick = function() {
 			nw.Shell.openExternal('https://tfe2-modding.github.io/DataFiles/buildinginfo.json.html')
 		}
+		text("Changes take effect when you reload the city")
 		const a = document.body.appendChild(document.createElement("a"))
 		a.href = "#"
 		a.innerText = "List"
